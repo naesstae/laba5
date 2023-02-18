@@ -29,8 +29,11 @@ public class AddCommand implements Command {
                 Long age = sc.nextLong();
 
                 System.out.println("Введите цвет дракона (Цифру или полное название) 1 - GREEN, 2 - ORANGE, 3 - BROWN");
-                Color dragonColor = Color.GREEN;
+                Color dragonColor = null;
                 String color = sc.next();
+                if(!(color.equals("1")||color.equals("2")||color.equals("3")||color.equals("GREEN")||color.equals("ORANGE")||color.equals("BROWN")||color.equals("\n"))){
+                    throw new InputMismatchException();
+                }
                 switch (color) {
                     case "1", "GREEN":
                         dragonColor = Color.GREEN;
@@ -43,6 +46,9 @@ public class AddCommand implements Command {
                 System.out.println("Введите тип дракона (Цифру или полное название) 1 - WATER, 2 - UNDERGROUND, 3 - FIRE");
                 DragonType dragonType = DragonType.WATER;
                 String type = sc.next();
+                if(!(type.equals("1")||type.equals("2")||type.equals("3")||type.equals("WATER")||type.equals("UNDERGROUND")||type.equals("FIRE"))){
+                    throw new InputMismatchException();
+                }
                 switch (type) {
                     case "1", "WATER":
                         dragonType = DragonType.WATER;
@@ -55,6 +61,9 @@ public class AddCommand implements Command {
                 System.out.println("Введите характер дракона (Цифру или полное название) 1 - CUNNING, 2 - WISE, 3 - CHAOTIC_EVIL, 4 - FICKLE");
                 DragonCharacter dragonCharacter = DragonCharacter.FICKLE;
                 String character = sc.next();
+                if(!(character.equals("1")||character.equals("2")||character.equals("3")||character.equals("CUNNING")||character.equals("WISE")||character.equals("CHAOTIC_EVIL")||character.equals("FICKLE")||character.equals("4"))){
+                    throw new InputMismatchException();
+                }
                 switch (character) {
                     case "1", "CUNNING":
                         dragonCharacter = DragonCharacter.CUNNING;
