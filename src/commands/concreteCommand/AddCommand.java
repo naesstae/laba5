@@ -30,8 +30,9 @@ public class AddCommand implements Command {
 
                 System.out.println("Введите цвет дракона (Цифру или полное название) 1 - GREEN, 2 - ORANGE, 3 - BROWN");
                 Color dragonColor = null;
-                String color = sc.next();
-                if(!(color.equals("1")||color.equals("2")||color.equals("3")||color.equals("GREEN")||color.equals("ORANGE")||color.equals("BROWN"))){
+                sc.nextLine();
+                String color = sc.nextLine();
+                if(!(color.equals("1")||color.equals("2")||color.equals("3")||color.equals("GREEN")||color.equals("ORANGE")||color.equals("BROWN")||color.isEmpty())){
                     throw new InputMismatchException();
                 }
                 switch (color) {
