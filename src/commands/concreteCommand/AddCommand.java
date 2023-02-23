@@ -15,9 +15,16 @@ public class AddCommand implements Command {
         if (Executor.split.length == 1) {
             int i = 1;
             Scanner sc = new Scanner(System.in);
+            String name = "k";
+            long x = 0;
+            float y = 0;
+            Color dragonColor = null;
+            Long age = Long.valueOf(0);
+            DragonType dragonType = DragonType.WATER;
+            DragonCharacter dragonCharacter = DragonCharacter.FICKLE;
+            Double eyesCount= Double.valueOf(0);
             while (i != 0) {
                 try {
-                    String name = "k";
                     while (i==1) {
                         System.out.println("Введите имя дракона");
                         name = sc.nextLine();
@@ -26,7 +33,6 @@ public class AddCommand implements Command {
                         }
                         i = 2;
                     }
-                    long x = 0;
                     while (i == 2) {
                         try {
                             System.out.println("Введите координату X дракона");
@@ -43,7 +49,6 @@ public class AddCommand implements Command {
                             System.out.println(illegalValueOfXException.getMessage());
                         }
                     }
-                    float y = 0;
                     while (i == 3) {
                         System.out.println("Введите координату Y дракона");
                         String s=sc.nextLine();
@@ -56,7 +61,6 @@ public class AddCommand implements Command {
                         i = 4;
                     }
                     Coordinates coordinates = new Coordinates(x, y);
-                    Long age = Long.valueOf(0);
                     while (i == 4) {
                         System.out.println("Введите возраст дракона");
                         String s=sc.nextLine();
@@ -66,7 +70,6 @@ public class AddCommand implements Command {
                         age=Long.valueOf(s);
                         i = 5;
                     }
-                    Color dragonColor = null;
                     while (i==5) {
                         System.out.println("Введите цвет дракона (Цифру или полное название) 1 - GREEN, 2 - ORANGE, 3 - BROWN");
                         String color = sc.nextLine();
@@ -83,7 +86,6 @@ public class AddCommand implements Command {
                         }
                         i=6;
                     }
-                    DragonType dragonType = DragonType.WATER;
                     while (i==6) {
                         System.out.println("Введите тип дракона (Цифру или полное название) 1 - WATER, 2 - UNDERGROUND, 3 - FIRE");
                         String type = sc.nextLine();
@@ -100,7 +102,6 @@ public class AddCommand implements Command {
                         }
                         i=7;
                     }
-                    DragonCharacter dragonCharacter = DragonCharacter.FICKLE;
                     while (i==7) {
                         System.out.println("Введите характер дракона (Цифру или полное название) 1 - CUNNING, 2 - WISE, 3 - CHAOTIC_EVIL, 4 - FICKLE");
                         String character = sc.nextLine();
@@ -119,7 +120,6 @@ public class AddCommand implements Command {
                         }
                         i=8;
                     }
-                    Double eyesCount= Double.valueOf(0);
                     while (i==8) {
                         System.out.println("Введите количество глаз дракона");
                         String s=sc.nextLine();
