@@ -126,7 +126,7 @@ public class RemoveGreaterCommand implements Command {
                         DragonHead dragonHead = new DragonHead(eyesCount);
                         Dragon dragon = new Dragon(name, coordinates, age, dragonColor, dragonType, dragonCharacter, dragonHead);
                         Collections.sort(dragons);
-                        for (i = 0; i > dragons.size(); ++i) {
+                        for (i = 0; i < dragons.size(); ++i) {
                             if (dragon.getAge() > dragons.get(i).getAge()){
                                 DragonsCollection.dragons.remove(dragons.get(i));
                             }
